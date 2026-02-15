@@ -3,7 +3,6 @@
 import * as React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import {
   Tag,
   List,
@@ -15,8 +14,6 @@ import {
   Check,
 } from 'lucide-react';
 import { Email } from '@/lib/mail-data';
-import { format } from 'date-fns';
-import { cn } from '@/lib/utils';
 
 interface EmailPreviewProps {
   email: Email | null;
@@ -102,7 +99,7 @@ export function EmailPreview({ email }: EmailPreviewProps) {
 
           {/* Metadata */}
           <div className="mb-6 text-sm text-[#6b7280]">
-            Hi Team, We're refining our product and need you...
+            Hi Team, We&apos;re refining our product and need you...
           </div>
 
           {/* Body */}
