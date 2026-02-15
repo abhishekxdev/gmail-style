@@ -10,7 +10,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Send, Paperclip, Smile, AtSign, X, Minus } from 'lucide-react';
+import { Send, Paperclip, Smile, AtSign, X } from 'lucide-react';
 
 interface ComposeDialogProps {
   open: boolean;
@@ -34,28 +34,19 @@ export function ComposeDialog({ open, onOpenChange }: ComposeDialogProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl gap-0 p-0 sm:rounded-2xl">
+      <DialogContent className="max-w-3xl gap-0 p-0 sm:rounded-2xl [&>button]:hidden">
         <DialogHeader className="flex flex-row items-center justify-between border-b border-[#e5e7eb] px-6 py-4">
           <DialogTitle className="text-lg font-semibold text-[#111827]">
             New Message
           </DialogTitle>
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 text-[#6b7280] hover:bg-[#f3f4f6] hover:text-[#111827]"
-            >
-              <Minus className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 text-[#6b7280] hover:bg-[#f3f4f6] hover:text-[#111827]"
-              onClick={() => onOpenChange(false)}
-            >
-              <X className="h-4 w-4" />
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8 text-[#6b7280] hover:bg-[#f3f4f6] hover:text-[#111827]"
+            onClick={() => onOpenChange(false)}
+          >
+            <X className="h-4 w-4" />
+          </Button>
         </DialogHeader>
 
         <div className="space-y-0">
